@@ -1,2 +1,83 @@
 @import "tailwindcss";
 
+@theme {
+  --color-phoenix-neon: #ff4500;
+  --color-phoenix-purp: #7000ff;
+  --color-phoenix-bg: #030305; /* Made it slightly darker for maximum depth */
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 69, 0, 0.5);
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-grid {
+    background-size: 30px 30px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse at center, white 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, white 20%, transparent 70%);
+  }
+
+  .spin-border {
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(from var(--angle), transparent 25%, #ff4500, #7000ff, transparent 75%);
+    animation: spin-angle 4s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .glow-box:hover .spin-border {
+    opacity: 1;
+  }
+
+  /* We need to define the custom property for the conic gradient to animate smoothly */
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes spin-angle {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  .typewriter-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: #ff4500;
+    vertical-align: bottom;
+    animation: blink-cursor 1s step-end infinite;
+  }
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+body {
+  background-color: var(--color-phoenix-bg);
+  color: white;
+}
