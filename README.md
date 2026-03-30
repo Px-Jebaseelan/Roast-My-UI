@@ -1,92 +1,102 @@
+<div align="center">
+
 # 🔥 Roast My UI | Trinity Engine
+**The Elite AI-Powered UI Dissection & Generation Platform**
 
-![Roast My UI Cover Banner](./public/og-image.png)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Gemini AI](https://img.shields.io/badge/Gemini-2.5_Flash-1A73E8?style=for-the-badge&logo=google)](https://aistudio.google.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 
-**Roast My UI** is an elite, multi-agent AI engineering platform built to relentlessly dissect, critique, and instantly rewrite user interface screenshots into atomic React and Tailwind CSS functional components. 
+<img src="./public/og-image.png" alt="Roast My UI Interface" width="100%" style="border-radius: 1rem; box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);" />
 
-Engineered for the modern Web3/Cyberpunk aesthetic, the application seamlessly bridges the gap between raw UI wireframes and hyper-optimized production HTML using the *Google Gemini 2.5 Flash Vision* model.
+> *Upload your UI. Get brutally roasted. Instantly receive the fixed, production-ready Tailwind code.*
 
-## 🚀 Key Features
-
-### 1. The Multi-Persona Analyst
-Switch between two distinct artificial intelligence identities to suit your development style:
-- **Gordon Ramsay (Roast Mode)**: A fiercely honest Principal UI Engineer. If your UI is terrible, it will ruthlessly diagnose heuristic violations. If your UI is phenomenal, it breaks character to shower you with genuine praise.
-- **Bob Ross (Praise Mode)**: An empathetic hype-man engineered to find the beauty in any layout block, offering gentle, ethereal improvements.
-
-### 2. The Magic Eraser (Client-Side Bounding Box)
-Don't want to scan the entire screen? Utilize our native bounding box to dynamically crop specific DOM components on the fly! Works flawlessly across Desktop (Mouse events) and Mobile Safari/Android WebKit (Native Touch Events).
-
-### 3. Voice Synthesis Engine
-Equipped with a robust client-side `SpeechSynthesis` array. Hear the AI physically read out the UI analysis in a tailored, deliberately paced Gordon Ramsay / Cyberpunk auditory profile. Voice streams are garbage-collected instantly replacing overlapping glitches.
-
-### 4. CodeLive: The Sandbox IFrame
-Why just read code when you can see it? Any generated monolithic HTML or decomposed `.tsx` atomic component architecture is actively streamed and interpreted securely via an isolated `<iframe srcdoc="...">` renderer. Features inline hot-reloading with the official `Monaco Editor`.
+[Explore The Documentation](./DOCUMENTATION.md) · [Report Bug](https://github.com/Px-Jebaseelan/roast-my-ui/issues) · [Request Feature](https://github.com/Px-Jebaseelan/roast-my-ui/issues)
 
 ---
 
-## 🏗️ Technical Stack
+</div>
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript throughout the core and Edge functions
-- **Styling**: Tailwind CSS V4 + Framer Motion (Glassmorphism aesthetics)
-- **AI Brain**: `@google/generative-ai` (Gemini 2.5 Flash native multimodality)
-- **Editor Integration**: `@monaco-editor/react`
-- **Database / Rate Limiting**: Upstash Redis (Enterprise Serverless Edge Caching)
-- **Analytics**: Vercel Web Analytics 
+## 🌌 The Vision
+
+**Roast My UI** is not just another wrapper. It is a highly opinionated, multi-agent AI engineering platform built to relentlessly dissect, critique, and restructure user interface screenshots into atomic React functional components. Engineered for the modern Web3/Cyberpunk aesthetic, the application seamlessly bridges the gap between raw UI wireframes and hyper-optimized production HTML.
 
 ---
 
-## ⚙️ Architecture & Data Pipelines
+## ✨ Elite Features
 
-### Hybrid Rate Limiting
-To protect against automated AI model scraping, traffic is protected natively:
-- **Vercel Deployments**: Handled by Upstash Redis `incr()` edge databases to strictly limit anonymous IPs to **3** generations per 24-hours.
-- **Localhost Development**: Features an intelligent Node `globalThis` persistent fallback `Map` array, rendering the engine completely immune to Turbopack Hot Module Reload wipes without throwing 500 errors!
+### 🎭 The Multi-Persona Analyst
+Switch between two distinct artificial intelligence identities dynamically:
+*   **Roast Mode (The Judge) 🔪** A fiercely honest Principal UI Engineer. If your UI is terrible, it ruthlessly diagnoses heuristic violations. If your UI is phenomenal, it breaks character to shower you with genuine praise.
+*   **Praise Mode (The Hype-Man) 🎨** An empathetic architect engineered to find the beauty in any layout block, offering gentle, ethereal improvements.
 
-### Compression Pipeline
-Client-side image inputs (up to extremely large payload sizes) are forcefully downscaled by `browser-image-compression` strictly bounding resolutions relative to dynamic **Quick** or **Pro** scan settings, radically optimizing Vercel edge function payloads while preserving optical clarity for Gemini.
+### ✂️ The Magic Eraser (Bounding Box)
+Don't want to scan the entire screen? Utilize our native bounding box to dynamically crop specific DOM components on the fly! Works flawlessly across **Desktop** (Mouse mechanics) and **Mobile Safari/Android WebKit** (Native Touch Events).
+
+### 🎙️ The Voice Synthesis Engine
+Equipped with a robust client-side `SpeechSynthesis` array. Hear the AI physically read out the UI analysis in a tailored, deliberately paced cyber-announcer auditory profile.
+
+### 💻 CodeLive: The Sandbox IFrame
+Stop reading code and start seeing it. Any generated monolithic HTML or decomposed `.tsx` atomic component architecture is actively streamed and interpreted securely via an isolated `iframe` renderer, featuring inline hot-reloading powered by the official **Monaco Editor**.
 
 ---
 
-## 💻 Local Development Setup
+## 🏗️ Premium Technical Stack
 
-### 1. Clone & Install
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 15 (App Router) | High-performance React serving & SSR |
+| **Styling** | Tailwind CSS v4 & Framer Motion | Fluid typography, glassmorphism, & physics |
+| **AI Brain** | Google Gemini 2.5 Flash | Native multimodality & vision inference |
+| **Code Engine** | Monaco Editor | Real-time transpilation & syntax formatting |
+| **Persistence** | Upstash Redis | Enterprise serverless Edge rate limiting |
+
+---
+
+## ⚡ Deployment & Setup
+
+Ready to run the Trinity Engine locally? It takes less than 60 seconds.
+
+### 1. Initialize
 ```bash
 git clone https://github.com/Px-Jebaseelan/roast-my-ui.git
 cd roast-my-ui
 npm install
 ```
 
-### 2. Environment Variables (`.env.local`)
-You must configure your API engine layers:
+### 2. Environment Variables
+Create a `.env.local` file in the root directory and map your Engine API keys:
 ```env
-# Required: The LLM Engine
-GEMINI_API_KEY=your_gemini_key_here
+# Required: The LLM Vision Engine
+GEMINI_API_KEY=your_gemini_api_key_here
 
-# Optional: Serverless Production Rate Tracking
+# Optional: Serverless Production Rate Tracking (Requires Upstash)
 UPSTASH_REDIS_REST_URL=your_upstash_url
 UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 ```
+> **Note:** If Upstash keys are missing during `localhost` dev, the system gracefully falls back to a Node `globalThis` memory Map to prevent crashing!
 
-### 3. Fire Up NextJS
+### 3. Ignite The Server
 ```bash
 npm run dev
 ```
-By default, this server allows your local mobile devices to bypass NextJS 15 dev HMR blocks so you can physically scan QR codes or share IPs locally on your Wi-Fi dynamically!
 
 ---
 
-## 🌍 Production Launch (Vercel)
+## 🌍 Launching to Vercel
 
-This application is strictly configured and mapped for single-click deployment to Vercel. SEO OpenGraph properties and Metadata endpoints physically match `.png` targets native to the App Router automatically. 
+This application is strictly configured and mapped for single-click zero-config deployment to Vercel. SEO OpenGraph properties and Metadata endpoints physically match `.png` targets native to the App Router automatically.
 
 ```bash
 npx vercel build
 npx vercel --prod
 ```
 
-## 📜 Roadmap (Phase 2)
-The next progression of the Phoenix Trinity project is **Steal My UI** — converting this engine into an isolated Google Chrome browser extension capable of traversing DOM blobs natively inside the user's browser, transmitting layout hierarchies statically to the AI.
-
 ---
-*Built by [Phoenix Trinity](https://phoenixtrinity.com)*
+
+<div align="center">
+  <p>Engineered with precision by <strong>Phoenix Trinity</strong>.</p>
+  <p><em>Phase 2 (Steal My UI - Chrome Extension) is currently in active development.</em></p>
+</div>
