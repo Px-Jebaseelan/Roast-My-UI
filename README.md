@@ -85,17 +85,6 @@ npm run dev
 
 ---
 
-## 🌍 Launching to Vercel
-
-This application is strictly configured and mapped for single-click zero-config deployment to Vercel. SEO OpenGraph properties and Metadata endpoints physically match `.png` targets native to the App Router automatically.
-
-```bash
-npx vercel build
-npx vercel --prod
-```
-
----
-
 <div align="center">
   <p>Engineered with precision by <strong>Phoenix Trinity</strong>.</p>
   <p><em>Phase 2 (Steal My UI - Chrome Extension) is currently in active development.</em></p>
