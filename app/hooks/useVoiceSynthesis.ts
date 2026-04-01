@@ -5,6 +5,8 @@ import { useEffect, useRef } from 'react';
 export function useVoiceSynthesis(text: string, playTrigger: boolean = true) {
   const synthRef = useRef<SpeechSynthesis | null>(null);
 
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
   useEffect(() => {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       synthRef.current = window.speechSynthesis;
@@ -19,10 +21,11 @@ export function useVoiceSynthesis(text: string, playTrigger: boolean = true) {
       synthRef.current?.cancel(); 
       
       const utterance = new SpeechSynthesisUtterance(text);
+      utteranceRef.current = utterance; // GC-Bug Fix: Bind to ref so Chrome doesn't delete it while speaking
       
       // Cyber-Hacker / Gordon Ramsay Voice Profile Tuning
-      utterance.rate = 0.95; // Deliberate and cold pacing
-      utterance.pitch = 0.6; // Deep, slightly threatening pitch
+      utterance.rate = 1.0; // Stabilized speed to prevent buffer underruns
+      utterance.pitch = 0.9; // Brought closer to 1.0; extreme pitch shifting causes lag on Windows TTS
       utterance.volume = 1;
       
       // Attempt to load a structured English voice (preferably British for the Ramsay effect)
@@ -37,9 +40,9 @@ export function useVoiceSynthesis(text: string, playTrigger: boolean = true) {
     };
 
     // Voices load asynchronously in some browsers
-    if (synthRef.current.getVoices().length > 0) {
+    if (synthRef.current?.getVoices().length > 0) {
       speak();
-    } else {
+    } else if (synthRef.current) {
       synthRef.current.onvoiceschanged = speak;
     }
 

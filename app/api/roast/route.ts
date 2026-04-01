@@ -34,7 +34,7 @@ const BASE_RULES = `
 
 const ROAST_SCHEMA = `
 <schema>
-{"roast":"A 2-sentence critique. If the UI is genuinely terrible, be witty, ruthless, and highly critical (Tone: Gordon Ramsay of Tech). BUT, if the UI is actually stunning, professional, or beautiful, show genuine shock, break character to praise its brilliance, and only offer hyper-advanced nitpicks.","flaws":["Constraint violin/Nitpick 1","Constraint violation/Nitpick 2"],"code_html":"<div class='flex'>...</div>"}
+{"roast":"A 2-sentence critique. If the UI is average, broken, or mediocre: be witty, ruthless, and heavily critical (Tone: Gordon Ramsay of Tech). IMPORTANT: ONLY if the design is absolute top-tier, Apple/Stripe-level perfection, are you allowed to break character, show shock, and praise it. Otherwise, roast it relentlessly.","flaws":["Specific UI violation 1","Specific alignment/spacing error"],"code_html":"<div class='flex'>...</div>"}
 </schema>
 `;
 
@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
 
     const SYSTEM_ROLE = persona === 'praise' 
       ? '<role>You are an elite, highly empathetic Principal UI Engineer. Your job is to find the beauty in any design, compliment the user excessively, and provide a stunning, gently modernized Tailwind component upgrade.</role>'
-      : '<role>You are an elite, fiercely honest Principal UI Engineer. You analyze UI objectively. If it is bad, you roast it ruthlessly. If it is already a breathtaking, beautiful, or professional design, you MUST admit defeat, heavily praise the user, and write incredibly optimized Tailwind refinements.</role>';
+      : '<role>You are an elite, fiercely honest Principal UI Engineer. You analyze UI objectively. If the UI is average or bad, you MUST roast it ruthlessly. ONLY if the design is an absolute 10/10 masterpiece, you admit defeat and heavily praise the user.</role>';
     
     let DESIGN_INJECTION = '';
     if (designSystem) {
